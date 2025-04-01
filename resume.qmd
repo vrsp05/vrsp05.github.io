@@ -12,17 +12,17 @@ International computer engineering student with a strong interest in space techn
 
 ### Specialized in
 
-•	Programming Languages (in order of proficiency): C#, Python, C++, C, Assembly
+•	**Programming Languages (in order of proficiency):** C#, Python, C++, C, Assembly
 
-•	Management & Soft: Scheduling, Team Management, Team Training, Spanish Language
+•	**Management & Soft:** Scheduling, Team Management, Team Training, Spanish Language
 
-•	Hardware & Software Tools: Arduino & IDE, STM32 & CubeIDE, GitHub
+•	**Hardware & Software Tools:** Arduino & IDE, STM32 & CubeIDE, GitHub
 
 ## Education
 
-Bachelor of Science in Computer Engineering	September 2023 - December 2027
+**Bachelor of Science in Computer Engineering**                                     |   September 2023 - December 2027
 
-Brigham Young University - Idaho	Rexburg, Idaho
+*Brigham Young University - Idaho*	                                                |   Rexburg, Idaho
 
 •	Certificate: Machine Learning Fundamentals
 
@@ -32,9 +32,9 @@ Brigham Young University - Idaho	Rexburg, Idaho
 
 ### Projects
 
-Food Storage Management System  November 2024 - Present
+**Food Storage Management System**                                                  |    November 2024 - Present
 
-C# | OOP | File Handling | Email Integration | Data Storing | Input Validation	Rexburg, ID
+*C# | OOP | File Handling | Email Integration | Data Storing | Input Validation*	|    Rexburg, ID
 
 •	Designed a food storage tracking system. Implemented an email notification system for expiration notifications and developed a robust input validation system for accurate data entry
 
@@ -42,9 +42,9 @@ C# | OOP | File Handling | Email Integration | Data Storing | Input Validation	R
 
 •	Planned improvements: A more intuitive user interface and compiling program into an executable
  
-Expense Tracker January 2025 - Present
+**Expense Tracker**                                                                 |   January 2025 - Present
 
-C++ | File Handling | STL | Data Storing | Input Validation	Rexburg, ID
+*C++ | File Handling | STL | Data Storing | Input Validation*	                    |   Rexburg, ID
 
 •	Developed a C++ application to track, filter, and manage of expenses. Implemented file handling to save and load expenses efficiently in 1 file
 
@@ -55,9 +55,9 @@ C++ | File Handling | STL | Data Storing | Input Validation	Rexburg, ID
 
 ## Occupation
 
-Faculty Technology Center Lead	January 2025 - Present
+**Faculty Technology Center Lead**                                                   |   January 2025 - Present
 
-Brigham Young University - Idaho	Rexburg, Idaho
+*Brigham Young University - Idaho*                                                   |   Rexburg, Idaho
 
 •	Enhanced 100+ online courses in Learning Management System (LMS) improving user experience, showcasing strong problem-solving skills to ensure high-quality course delivery
 
