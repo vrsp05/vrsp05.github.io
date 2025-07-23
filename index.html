@@ -13,17 +13,17 @@
         <h1>Welcome to Victor Santana's Portfolio</h1>
         <nav>
             <ul>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">Resume</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Books</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#books">Books</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
+        <section id="about">
             <h2>Hello, I'm Victor Santana</h2>
             <p>I’m an international Computer Engineering student at BYU-Idaho. I created this site to showcase my resume, projects, and other things I care about. Thanks for visiting!</p>
         </section>
@@ -42,6 +42,27 @@
             </a>
             <a href="tel:+1234567890">
             <i class="fas fa-phone"></i> Phone
+            </a>
+        </div>
+        </section>
+
+        <section class="links-section">
+        <h2>Find Me Online</h2>
+        <div class="links-container">
+            <a href="https://www.linkedin.com/in/victorrafaelsantana/" target="_blank">
+            <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/vrsp05" target="_blank">
+            <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://portfolium.com/VictorSantanaPimentel" target="_blank">
+            <i class="fas fa-folder-open"></i> Portfolium
+            </a>
+            <a href="https://byui.joinhandshake.com/profiles/htjh9e" target="_blank">
+            <i class="fas fa-handshake"></i> Handshake
+            </a>
+            <a href="mailto:victorrafaelsantana@hotmail.es">
+            <i class="fas fa-envelope"></i> Email Me
             </a>
         </div>
         </section>
@@ -73,26 +94,33 @@
                 </ul>
         </section>
 
-        <section class="links-section">
-        <h2>Find Me Online</h2>
-        <div class="links-container">
-            <a href="https://www.linkedin.com/in/victorrafaelsantana/" target="_blank">
-            <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://github.com/vrsp05" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="https://portfolium.com/VictorSantanaPimentel" target="_blank">
-            <i class="fas fa-folder-open"></i> Portfolium
-            </a>
-            <a href="https://byui.joinhandshake.com/profiles/htjh9e" target="_blank">
-            <i class="fas fa-handshake"></i> Handshake
-            </a>
-            <a href="mailto:victorrafaelsantana@hotmail.es">
-            <i class="fas fa-envelope"></i> Email Me
-            </a>
+        <section id="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+            <!-- <img src="images/fsms-preview.png" alt="Food Storage Management System Screenshot"> -->
+            <h3>Food Storage Management System</h3>
+            <p>A C# program that tracks food items by expiration date and sends email alerts. Includes user login and file-based storage.</p>
+            <a href="https://github.com/vrsp05/Food-Storage-Management-System.git" target="_blank">View on GitHub</a>
+            <a href="https://youtu.be/IPpC3U34hpw" target="_blank">View a Demo on Youtube</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+            <!-- <img src="images/expense-tracker.png" alt="Expense Tracker Screenshot"> -->
+            <h3>Expense Tracker</h3>
+            <p>A C++ expense manager with a command-line interface using STL algorithms, and file handling. The program allows users to add, filter, save, and load expenses efficiently.</p>
+            <a href="https://github.com/vrsp05/Expense-Tracker.git" target="_blank">View on GitHub</a>
+            <a href="https://youtu.be/IPpC3U34hpw" target="_blank">View a Demo on Youtube</a>
+            </div>
+
+            <!-- More projects can go here -->
+
         </div>
         </section>
+
 
         <section id="books">
         <h2>Books I've Read</h2>
@@ -132,8 +160,10 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Victor Rafael Santana Pimentel</p>
+    <p>&copy; 2025 Victor Santana Pimentel. All rights reserved.</p>
+    <p>Website built with ❤️ using GitHub Pages</p>
     </footer>
+
 
     <script src="script.js"></script>
 </body>

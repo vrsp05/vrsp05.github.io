@@ -7,6 +7,10 @@
   color: black;
 }
 
+html {
+  scroll-padding-top: 120px; /* Adjust based on header height */
+}
+
 /* Body styles */
 body {
   background-color: #f9f9f9;
@@ -15,12 +19,16 @@ body {
 }
 
 /* Header styles */
-header {
-  background-color: #015fbd;
-  color: white;
-  padding: 20px 0;
+header{
   text-align: center;
   margin-bottom: 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  /* position: sticky; */
+  top: 0;
+  z-index: 1000;
 }
 header h1 {
   color: white;
@@ -44,8 +52,8 @@ nav ul li a {
 }
 
 nav ul li a:hover {
- border-bottom: white 2px solid;
- animation: border-bottom 1.3s ease;
+ border-bottom: white 3px solid;
+transition: border-bottom 0.1s ease;
 
 }
 
@@ -212,6 +220,68 @@ section#resume ul  {
 .contact-methods a:hover {
   background-color: #d2d2d2;
 }
+
+footer {
+  background-color: #015fbd;
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.95rem;
+  margin-top: 3rem;
+}
+
+footer p {
+  color: white;
+}
+
+#projects {
+  padding: 4rem 2rem;
+  background-color: #f8f9fa;
+  text-align: center;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #343a40;
+}
+
+.project-card a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
+
 
 
 @media (max-width: 600px) {
