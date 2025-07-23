@@ -1,0 +1,223 @@
+/* Reset some default browser styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+/* Body styles */
+body {
+  background-color: #f9f9f9;
+  line-height: 1.6;
+  /* padding: 10px; */
+}
+
+/* Header styles */
+header {
+  background-color: #015fbd;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-bottom: 30px;
+}
+header h1 {
+  color: white;
+}
+/* Navigation menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 12px;
+  /* border-radius: 4px; */
+  transition: background-color 0.3s ease;
+}
+
+nav ul li a:hover {
+ border-bottom: white 2px solid;
+ animation: border-bottom 1.3s ease;
+
+}
+
+
+/* Main content */
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Section inside main */
+main section {
+  background-color: white;
+  padding: 25px 30px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+ margin: 20px;
+}
+
+/* Section heading */
+main section h2 {
+  margin-bottom: 15px;
+  color: #004080;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Books */
+#books {
+  padding: 2rem;
+}
+
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.book:hover {
+  transform: translateY(-5px);
+}
+
+.book img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.book-info {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.book-info h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.book-info p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.book-info a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.book-info a:hover {
+  text-decoration: underline;
+}
+
+
+section#resume ul  {
+  padding-left: 30px;
+}
+
+.links-section {
+  background-color: #f0f4f8;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.links-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.links-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.links-container a {
+  text-decoration: none;
+  color: #0056b3;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.links-container a i {
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+.links-container a:hover {
+  color: #003d80;
+}
+
+#contact {
+  padding: 2rem;
+  background-color: #f7f7f7;
+  text-align: center;
+}
+
+.contact-methods {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.contact-methods a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.contact-methods a:hover {
+  background-color: #d2d2d2;
+}
+
+
+@media (max-width: 600px) {
+  .books-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
