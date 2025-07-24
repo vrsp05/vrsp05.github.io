@@ -8,58 +8,133 @@
 }
 
 html {
+  height: 100%; /* Add this */
   scroll-padding-top: 120px; /* Adjust based on header height */
 }
 
 /* Body styles */
 body {
-  background-color: #f9f9f9;
+  min-height: 100%; /* Add this */
+  display: flex; /* Add this */
+  flex-direction: column; /* Add this */
+
+  /* --- START: Background Image Styles --- */
+  background-image: url('images/Earth_Image.jpg'); /* <-- REPLACE WITH YOUR IMAGE PATH */
+  background-size: cover; /* Ensures the image covers the whole page */
+  background-position: center center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  background-attachment: fixed; /* This is the key! It keeps the image stationary during scroll */
+  /* --- END: Background Image Styles --- */
+
+  background-color: #1a1a2e; /* A dark fallback color that fits a space theme */
   line-height: 1.6;
-  /* padding: 10px; */
+  color: #333; /* Default text color for content on light backgrounds */
 }
 
-/* Header styles */
-header{
-  text-align: center;
-  margin-bottom: 30px;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-
-  /* position: sticky; */
-  top: 0;
-  z-index: 1000;
+/* General Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #000; /* Black background */
+    color: #fff; /* White text for the h1 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
+
 header h1 {
-  color: white;
+    color: #fff;
 }
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff; /* White link text */
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Active link style */
+.nav-links a.active,
+.nav-links a:hover {
+    background-color: #fff; /* White background on hover/active */
+    color: #000; /* Black text on hover/active */
+}
+
+/* Make the "About Me" button permanently white with black text/icon */
+.nav-links .dropbtn {
+    background-color: #fff;
+    color: #000;
+}
+.nav-links .dropbtn .fa-caret-down {
+    color: #000;
+}
+
+/* === START: DROPDOWN MENU STYLES === */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 29px;
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black !important; /* Black text for dropdown items */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* === END: DROPDOWN MENU STYLES === */
+
+/* Hamburger Menu Icon */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff !important; /* White icon color */
+}
+
 /* Navigation menu */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  margin-top: 10px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  padding: 6px 12px;
-  /* border-radius: 4px; */
-  transition: background-color 0.3s ease;
-}
-
-nav ul li a:hover {
- border-bottom: white 3px solid;
-transition: border-bottom 0.1s ease;
-
-}
-
 
 /* Main content */
 main {
+  flex-grow: 1; /* This is the key change */
   max-width: 900px;
   margin: 0 auto;
   padding: 0 15px;
@@ -67,11 +142,12 @@ main {
 
 /* Section inside main */
 main section {
+  display: none; /* Hide all sections by default */
   background-color: white;
   padding: 25px 30px;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
- margin: 20px;
+  margin: 20px;
 }
 
 /* Section heading */
@@ -80,13 +156,77 @@ main section h2 {
   color: #004080;
 }
 
-/* Footer styles */
+/* === START: CLEAN FOOTER STYLES === */
+
 footer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 0.9rem;
-  color: #666;
+    background-color: #000;
+    color: #fff;
+    padding: 2rem;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center; /* Center the entire footer content */
+    align-items: center; /* Vertically align everything */
+    gap: 3rem; /* Space between icons and text */
 }
+
+.footer-social-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center; /* Center icons vertically */
+}
+
+.footer-social-links a {
+    color: #fff !important; /* Force white color for links */
+    font-size: 1.5rem;
+    transition: color 0.3s;
+    text-decoration: none;
+    display: flex; /* Make the link a flex container */
+    align-items: center; /* Center the icon within the link */
+}
+
+.footer-social-links a i {
+    color: #fff !important; /* Force white color for icons */
+}
+
+.footer-social-links a:hover {
+    color: #007bff !important; /* Blue on hover */
+}
+
+.footer-social-links a:hover i {
+    color: #007bff !important; /* Blue icons on hover */
+}
+
+.footer-text {
+    text-align: center;
+    line-height: 1.4; /* Tighter line spacing */
+}
+
+.footer-text p {
+    margin: 0.2rem 0; /* Reduced margin for tighter spacing */
+    font-size: 0.9rem;
+    color: #ccc !important; /* Force light gray for footer text */
+}
+
+/* Media Query for Mobile Footer Layout */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /* Stack vertically on mobile */
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .footer-text {
+        order: 1; /* Text appears first */
+    }
+
+    .footer-social-links {
+        order: 2; /* Icons appear second */
+        justify-content: center;
+    }
+}
+
+/* === END: CLEAN FOOTER STYLES === */
+
 
 /* Books */
 #books {
@@ -221,19 +361,6 @@ section#resume ul  {
   background-color: #d2d2d2;
 }
 
-footer {
-  background-color: #015fbd;
-  color: white;
-  text-align: center;
-  padding: 1.5rem;
-  font-size: 0.95rem;
-  margin-top: 3rem;
-}
-
-footer p {
-  color: white;
-}
-
 #projects {
   padding: 4rem 2rem;
   background-color: #f8f9fa;
@@ -289,5 +416,202 @@ footer p {
     flex-direction: column;
     align-items: center;
   }
+}
+
+/* === START: SIMPLIFIED MEDIA QUERY FOR HAMBURGER === */
+/* Media Query for Tablet and Mobile */
+@media (max-width: 768px) {
+    /* Hide the desktop navigation links */
+    .nav-links {
+        display: none;
+    }
+
+    /* Show and style the hamburger icon to be clearly visible */
+    .hamburger {
+        display: block; /* Make it visible on mobile */
+        background-color: #fff; /* White background */
+        color: #000; /* Black icon color for contrast */
+        padding: 5px 8px; /* Add some space around the icon */
+        border-radius: 5px; /* Rounded corners */
+        font-size: 1.5rem;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Styles for the dropdown menu when it's active */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Position it right below the header */
+        right: 0;
+        background-color: #000;
+        width: 100%;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        padding: 0.5rem 0; /* Add some padding to the container */
+    }
+
+    /* When the menu is active, show the list items again */
+    .nav-links.active li {
+        width: 100%;
+        margin: 0.5rem 0; /* Add vertical margin for spacing */
+        text-align: center;
+    }
+
+    .nav-links.active a {
+        padding: 0.5rem 1rem; /* Adjust padding for a better look */
+    }
+
+    /* Hide dropdown-specific elements on mobile menu */
+    .nav-links.active .dropdown-content {
+        display: block; /* Show sub-items */
+        position: static; /* Remove absolute positioning */
+        background-color: transparent;
+        box-shadow: none;
+        min-width: auto;
+    }
+
+    .nav-links.active .dropdown-content a {
+        color: #fff !important; /* White text for mobile sub-items */
+        padding: 0.5rem 2rem; /* Indent sub-items */
+        text-align: center;
+    }
+
+    .nav-links.active .dropbtn {
+        font-weight: bold; /* Make the main item bold */
+    }
+    
+    .nav-links.active .dropbtn .fa-caret-down {
+        display: none; /* Hide the caret on mobile */
+    }
+}
+/* === END: SIMPLIFIED MEDIA QUERY FOR HAMBURGER === */
+
+section#about {
+    text-align: center;
+}
+
+/* === START: DOCUMENT VIEWER STYLES === */
+.document-viewer {
+    text-align: center;
+}
+
+.document-viewer h2 {
+    margin-bottom: 2rem;
+}
+
+.document-image {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    margin-bottom: 2rem;
+    border-radius: 5px;
+}
+
+.document-actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.document-actions .btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.btn-view {
+    background-color: #007bff;
+    color: #fff !important;
+}
+
+.btn-view:hover {
+    background-color: #0056b3;
+}
+
+.btn-download {
+    background-color: #28a745;
+    color: #fff !important;
+}
+
+.btn-download:hover {
+    background-color: #1e7e34;
+}
+
+/* === START: FILE GRID STYLES === */
+#files h2 {
+    text-align: center;
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.file-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 2rem;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.file-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.file-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+.file-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+/* === END: FILE GRID STYLES === */
+
+/* Styles for subsections within the About page */
+.sub-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+}
+
+/* Center all headings within the About section */
+section#about h2 {
+    text-align: center;
+    margin-bottom: 1rem; /* Adds some space below the heading */
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 2rem 0;
 }
 

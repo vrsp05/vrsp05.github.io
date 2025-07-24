@@ -10,88 +10,143 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Victor Santana's Portfolio</h1>
+        <h1>Victor Santana's Portfolio</h1>
         <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#resume">Resume</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#books">Books</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul class="nav-links">
+                <!-- This is the "About Me" dropdown -->
+                <li class="dropdown">
+                    <a href="#about" class="nav-link dropbtn">About Me <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#about-sub">Biography</a>
+                        <a href="#contact-sub">Contact</a>
+                        <a href="#links-sub">Find Me Online</a>
+                    </div>
+                </li>
+
+                <!-- The "Files" button now links directly to the #files section -->
+                <li class="dropdown">
+                    <a href="#files" class="nav-link dropbtn">Files <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="#resume">Resume</a>
+                        <a href="#cover-letter">Cover Letter</a>
+                        <a href="#transcript">Unofficial Transcript</a>
+                        <a href="#cv">Curriculum Vitae</a>
+                    </div>
+                </li>
+
+                <!-- Your other links -->
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#books" class="nav-link">Books</a></li>
             </ul>
         </nav>
+        <button class="hamburger">☰</button>
     </header>
 
     <main>
+        <!-- The "About Me" section now contains the other two -->
         <section id="about">
-            <h2>Hello, I'm Victor Santana</h2>
+            <h2 id="about-sub">Biography</h2>
             <p>I’m an international Computer Engineering student at BYU-Idaho. I created this site to showcase my resume, projects, and other things I care about. Thanks for visiting!</p>
+            
+            <hr> <!-- Visual separator -->
+
+            <!-- Contact section with your specified links -->
+            <div id="contact-sub" class="sub-section">
+                <h2>Contact</h2>
+                <div class="contact-methods">
+                    <a href="mailto:victorrafaelsantana@hotmail.es"><i class="fas fa-envelope"></i> Email Me</a>
+                    <a href="tel:+1-762-769-5008"><i class="fas fa-phone"></i> Phone</a> <!-- <-- UPDATE PHONE NUMBER -->
+                    <a href="https://www.linkedin.com/in/victorrafaelsantana/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://github.com/vrsp05" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <hr> <!-- Visual separator -->
+
+            <!-- Find Me Online section with your specified links -->
+            <div id="links-sub" class="sub-section">
+                <h2>Find Me Online</h2>
+                <div class="links-container">
+                    <a href="https://www.linkedin.com/in/victorrafaelsantana/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    <a href="https://portfolium.com/VictorSantanaPimentel" target="_blank"><i class="fas fa-id-card"></i> Portfolium</a> <!-- <-- UPDATE LINK -->
+                    <a href="https://byui.joinhandshake.com/profiles/htjh9e" target="_blank"><i class="fas fa-handshake"></i> Handshake</a> <!-- <-- UPDATE LINK -->
+                    <a href="https://github.com/vrsp05" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
         </section>
 
-        <section id="contact">
-        <h2>Contact Me</h2>
-        <div class="contact-methods">
-            <a href="mailto:yourname@email.com" target="_blank">
-            <i class="fas fa-envelope"></i> Email
-            </a>
-            <a href="https://www.linkedin.com/in/yourprofile" target="_blank">
-            <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://github.com/yourgithub" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="tel:+1234567890">
-            <i class="fas fa-phone"></i> Phone
-            </a>
-        </div>
+        <!-- The other main sections remain as they were -->
+        <!-- === START: NEW "ALL FILES" SECTION === -->
+        <section id="files">
+            <h2>All Files</h2>
+            <p class="section-intro">Click on a file to view its contents.</p>
+            <div class="file-grid">
+                <a href="#resume" class="file-card">
+                    <i class="fas fa-file-alt"></i>
+                    <h3>Resume</h3>
+                </a>
+                <a href="#cover-letter" class="file-card">
+                    <i class="fas fa-envelope-open-text"></i>
+                    <h3>Cover Letter</h3>
+                </a>
+                <a href="#transcript" class="file-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Unofficial Transcript</h3>
+                </a>
+                <a href="#cv" class="file-card">
+                    <i class="fas fa-id-badge"></i>
+                    <h3>Curriculum Vitae</h3>
+                </a>
+            </div>
         </section>
+        <!-- === END: NEW "ALL FILES" SECTION === -->
 
-        <section class="links-section">
-        <h2>Find Me Online</h2>
-        <div class="links-container">
-            <a href="https://www.linkedin.com/in/victorrafaelsantana/" target="_blank">
-            <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://github.com/vrsp05" target="_blank">
-            <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="https://portfolium.com/VictorSantanaPimentel" target="_blank">
-            <i class="fas fa-folder-open"></i> Portfolium
-            </a>
-            <a href="https://byui.joinhandshake.com/profiles/htjh9e" target="_blank">
-            <i class="fas fa-handshake"></i> Handshake
-            </a>
-            <a href="mailto:victorrafaelsantana@hotmail.es">
-            <i class="fas fa-envelope"></i> Email Me
-            </a>
-        </div>
-        </section>
-
+        <!-- Resume Section -->
         <section id="resume">
-            <h2>Resume, Unofficial Transcript, Cover Letter, and CV</h2>
-            <p>You can view or download my documents below:</p>
-                <ul>
-                    <li>
-                    Resume (PDF) —
-                    <a href="downloads/Victor_Santana_Resume.pdf" target="_blank">View Resume</a> |
-                    <a href="downloads/Victor_Santana_Resume.pdf" download>Download Resume</a>
-                    </li>
-                    <li>
-                    Unofficial Transcript —
-                    <a href="downloads/Victor_Santana_Unofficial_Transcript.pdf" target="_blank">View Transcript</a> |
-                    <a href="downloads/Victor_Santana_Unofficial_Transcript.pdf" download>Download Transcript</a>
-                    </li>
-                    <li>
-                    Cover Letter —
-                    <a href="downloads/Victor_Santana_General_Cover_Letter.pdf" target="_blank">View Cover Letter</a> |
-                    <a href="downloads/Victor_Santana_General_Cover_Letter.pdf" download>Download Cover Letter</a>
-                    </li>
-                    <li>
-                    CV —
-                    <a href="downloads/CV.pdf" target="_blank">View Curriculum Vitae</a> |
-                    <a href="downloads/CV.pdf" download>Download Curriculum Vitae</a>
-                    </li>
-                </ul>
+            <div class="document-viewer">
+                <h2>My Most Recent Resume</h2>
+                <img src="images/Victor_Santana_Resume_Image.jpg" alt="Resume Preview" class="document-image">
+                <div class="document-actions">
+                    <a href="downloads/Victor_Santana_Resume.pdf" target="_blank" class="btn btn-view">View In Another Page</a>
+                    <a href="downloads/Victor_Santana_Resume.pdf" download="Victor_Santana_Resume.pdf" class="btn btn-download">Download</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cover Letter Section -->
+        <section id="cover-letter">
+            <div class="document-viewer">
+                <h2>My Most Recent Cover Letter</h2>
+                <img src="images/Victor_Santana_General_Cover_Letter.jpg" alt="Cover Letter Preview" class="document-image">
+                <div class="document-actions">
+                    <a href="downloads/Victor_Santana_General_Cover_Letter.pdf" target="_blank" class="btn btn-view">View In Another Page</a>
+                    <a href="downloads/Victor_Santana_General_Cover_Letter.pdf" download="Victor_Santana_Cover_Letter.pdf" class="btn btn-download">Download</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transcript Section -->
+        <section id="transcript">
+            <div class="document-viewer">
+                <h2>My Most Recent Unofficial Transcript</h2>
+                <img src="images/Victor_Santana_Unofficial_Transcript.jpg" alt="Transcript Preview" class="document-image">
+                <div class="document-actions">
+                    <a href="downloads/Victor_Santana_Unofficial_Transcript.pdf" target="_blank" class="btn btn-view">View In Another Page</a>
+                    <a href="downloads/Victor_Santana_Unofficial_Transcript.pdf" download="Victor_Santana_Transcript.pdf" class="btn btn-download">Download</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Vitae Section -->
+        <section id="cv">
+            <div class="document-viewer">
+                <h2>My Most Recent Curriculum Vitae</h2>
+                <img src="images/cv-preview.png" alt="CV Preview" class="document-image">
+                <div class="document-actions">
+                    <a href="files/cv.pdf" target="_blank" class="btn btn-view">View In Another Page</a>
+                    <a href="files/cv.pdf" download="Victor_Santana_CV.pdf" class="btn btn-download">Download</a>
+                </div>
+            </div>
         </section>
 
         <section id="projects">
@@ -160,10 +215,16 @@
     </main>
 
     <footer>
-    <p>&copy; 2025 Victor Santana Pimentel. All rights reserved.</p>
-    <p>Website built with ❤️ using GitHub Pages</p>
+        <div class="footer-text">
+            <p>&copy; 2025 Victor Santana Pimentel. All rights reserved.</p>
+            <p>Website built with ❤️ using GitHub Pages</p>
+        </div>
+        <div class="footer-social-links">
+            <a href="mailto:victorrafaelsantana@hotmail.es" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/victorrafaelsantana/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/vrsp05" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
     </footer>
-
 
     <script src="script.js"></script>
 </body>
