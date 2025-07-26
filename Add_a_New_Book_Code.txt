@@ -1,8 +1,0 @@
-        <div class="book">
-            <img src="image/BOOK_COVEr.jpg" alt="BOOK_TITLE">
-            <div class="book-info">
-            <h3>BOOK_TITLE</h3>
-            <p>Short comment about the book.</p>
-            <a href="GOODREADS_LINK" target="_blank">View on Goodreads</a>
-            </div>
-        </div>

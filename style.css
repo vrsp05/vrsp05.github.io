@@ -488,7 +488,7 @@ section#resume ul  {
 /* === END: SIMPLIFIED MEDIA QUERY FOR HAMBURGER === */
 
 section#about {
-    text-align: center;
+    text-align: left;
 }
 
 /* === START: DOCUMENT VIEWER STYLES === */
@@ -595,6 +595,16 @@ section#about {
     font-size: 1.2rem;
 }
 /* === END: FILE GRID STYLES === */
+
+/* Change text-align from 'center' to 'left' */
+section#about {
+    text-align: left;
+}
+
+/* Add space between the biography paragraphs */
+section#about p {
+    margin-bottom: 1.2rem;
+}
 
 /* Styles for subsections within the About page */
 .sub-section {

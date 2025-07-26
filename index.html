@@ -46,7 +46,15 @@
         <!-- The "About Me" section now contains the other two -->
         <section id="about">
             <h2 id="about-sub">Biography</h2>
-            <p>I’m an international Computer Engineering student at BYU-Idaho. I created this site to showcase my resume, projects, and other things I care about. Thanks for visiting!</p>
+
+            <!-- Add your profile picture here -->
+            <img src="images/Victor_Santana_Professional_Picture.jpg" alt="Victor Santana" class="profile-picture">
+
+            <p>Hi, I’m Victor Santana — a Computer Engineering student at Brigham Young University–Idaho, originally from Santo Domingo Este in the Dominican Republic. I’m passionate about solving real-world problems through technology, especially in the areas of aerospace, embedded systems, and robotics. I’m driven by a desire to build systems that people can rely on, especially in places like my home country, where stable technology can truly change lives.</p>
+            <p>I’ve always believed that hard work, respect, and humility open doors. That belief has shaped my journey from helping people as a missionary during the pandemic, to leading a team of over 20 student employees at BYU–I’s Faculty Technology Center. In my role, I’ve helped support over 300 online courses per semester, led training programs, managed custom automation tools, and coordinated with multiple departments. Every day I help people — faculty, students, and my coworkers — and every day I learn something new.</p>
+            <p>I’m skilled in C#, Python, C, and C++, and I enjoy applying those languages to projects that matter. One of my favorite C++ projects was a terminal-based Expense Tracker that taught me how to structure programs and manage files. In C#, I’m currently building a Food Storage Management System inspired by my LDS faith, which includes account login, data saving, email notifications, and more — all from scratch. These projects reflect my love for both hardware and software, and how they work together to solve real problems.</p>
+            <p>I’m also bilingual (Spanish and English) and a full-year scholarship recipient. I love working with microcontrollers like STM32 and Arduino, and I’ve gained hands-on experience with circuit design, object-oriented programming, file handling, and debugging. Whether it's through team collaboration, leadership, or learning by doing, I’m always trying to grow both professionally and personally.</p>
+            <p>Outside of school and work, I’m a husband to my amazing wife Nora, and I dream of one day retiring in the Dominican Republic — where I can live a simple, happy life, give back to my community, and help others rise. Until then, I’m focused on becoming the best engineer and person I can be.</p>
             
             <hr> <!-- Visual separator -->
 
@@ -155,20 +163,32 @@
             
             <!-- Project 1 -->
             <div class="project-card">
-            <!-- <img src="images/fsms-preview.png" alt="Food Storage Management System Screenshot"> -->
-            <h3>Food Storage Management System</h3>
-            <p>A C# program that tracks food items by expiration date and sends email alerts. Includes user login and file-based storage.</p>
-            <a href="https://github.com/vrsp05/Food-Storage-Management-System.git" target="_blank">View on GitHub</a>
-            <a href="https://youtu.be/IPpC3U34hpw" target="_blank">View a Demo on Youtube</a>
+                <h3>Food Storage Management System</h3>
+                <p>A C# program that tracks food items by expiration date and sends email alerts. Includes user login and file-based storage.</p>
+                <!-- New container for the links -->
+                <div class="project-links">
+                    <a href="https://github.com/vrsp05/Food-Storage-Management-System.git" target="_blank" class="project-btn github-btn">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://youtu.be/IPpC3U34hpw" target="_blank" class="project-btn youtube-btn">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </a>
+                </div>
             </div>
 
             <!-- Project 2 -->
             <div class="project-card">
-            <!-- <img src="images/expense-tracker.png" alt="Expense Tracker Screenshot"> -->
-            <h3>Expense Tracker</h3>
-            <p>A C++ expense manager with a command-line interface using STL algorithms, and file handling. The program allows users to add, filter, save, and load expenses efficiently.</p>
-            <a href="https://github.com/vrsp05/Expense-Tracker.git" target="_blank">View on GitHub</a>
-            <a href="https://youtu.be/IPpC3U34hpw" target="_blank">View a Demo on Youtube</a>
+                <h3>Expense Tracker</h3>
+                <p>A C++ expense manager with a command-line interface using STL algorithms, and file handling. The program allows users to add, filter, save, and load expenses efficiently.</p>
+                <!-- New container for the links -->
+                <div class="project-links">
+                    <a href="https://github.com/vrsp05/Expense-Tracker.git" target="_blank" class="project-btn github-btn">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    <a href="https://youtu.be/IPpC3U34hpw" target="_blank" class="project-btn youtube-btn">
+                        <i class="fab fa-youtube"></i> YouTube
+                    </a>
+                </div>
             </div>
 
             <!-- More projects can go here -->
@@ -229,4 +249,203 @@
     <script src="script.js"></script>
 </body>
 </html>
+
+<style>
+/* === START: CORRECTED MOBILE DROPDOWN ADJUSTMENTS === */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links */
+    }
+
+    /* When the menu is active, show the list items again */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #000;
+        width: 100%;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        padding: 0.5rem 0;
+    }
+
+    .nav-links.active li {
+        width: 100%;
+        margin: 0; /* Remove margin for tighter grouping */
+        text-align: center;
+    }
+
+    /* Style for all links in the mobile menu */
+    .nav-links.active a {
+        padding: 0.75rem 1rem;
+        display: block; /* Make the whole area clickable */
+    }
+
+    /* Show and style the hamburger icon */
+    .hamburger {
+        display: block !important; /* Ensure it's visible */
+        color: #fff !important; /* Force the icon color to be white */
+        font-size: 2rem; /* Make it a bit larger */
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* --- Mobile Dropdown Specific Styles --- */
+
+    /* Hide the dropdown caret on mobile */
+    .dropbtn .fa-caret-down {
+        display: none;
+    }
+
+    /* Display the dropdown content as part of the list */
+    .nav-links.active .dropdown-content {
+        display: block;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    /* Style the sub-menu links */
+    .nav-links.active .dropdown-content a {
+        background-color: rgba(255, 255, 255, 0.1); /* Slightly different background for sub-items */
+        padding-left: 2rem; /* Indent the sub-items */
+        font-size: 0.9rem; /* Make sub-items slightly smaller */
+    }
+}
+/* === END: CORRECTED MOBILE DROPDOWN ADJUSTMENTS === */
+
+.project-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  text-align: left;
+  transition: transform 0.3s;
+  /* Add flex properties to align content */
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Add this to make the description grow and push the links to the bottom */
+.project-card p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
+}
+
+/* === START: PROJECT LINK BUTTONS === */
+.project-links {
+    display: flex;
+    justify-content: center; /* Add this line to center the buttons */
+    gap: 1rem; /* Increased space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+}
+
+.project-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* Space between icon and text */
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #fff !important; /* Force white text */
+}
+
+.github-btn {
+    background-color: #6c757d; /* Lighter, modern grey */
+}
+
+.github-btn:hover {
+    background-color: #5a6268; /* Darker grey on hover */
+}
+
+.youtube-btn {
+    background-color: #FF0000;
+}
+
+.youtube-btn:hover {
+    background-color: #c40202;
+}
+/* === END: PROJECT LINK BUTTONS === */
+
+.project-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 2rem 0;
+}
+
+/* === START: PROFILE PICTURE STYLES === */
+.profile-picture {
+    float: left;
+    width: 150px;  /* Set the width you want */
+    height: auto;  /* Change this from 200px to 'auto' */
+    object-fit: cover; /* This property is now less critical but good to keep */
+    border-radius: 8px; 
+    margin-right: 1.5rem; 
+    margin-bottom: 0.5rem; 
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+/* === END: PROFILE PICTURE STYLES === */
+
+/* === START: FILE GRID STYLES === */
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.file-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 1.25rem;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.file-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.file-card i {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #007bff;
+}
+
+.file-card h3 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+/* Change text-align from 'center' to 'left' */
+section#about {
+    text-align: left;
+    overflow: auto; /* Add this to contain the floated image */
+}
+
+/* Add space between the biography paragraphs */
+section#about p {
+    margin-bottom: 1rem;
+}
+/* === END: FILE GRID STYLES === */
 
