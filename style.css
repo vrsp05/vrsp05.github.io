@@ -727,3 +727,29 @@ footer {
     color: #ccc;
 }
 /* === END: NEW LANDING PAGE STYLES === */
+
+/* === ACTIVE LINK STYLING === */
+/* For regular navigation links (Projects, Books) */
+.nav-links a.active-link:not(.dropbtn) {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-radius: 4px !important;
+}
+
+/* For dropdown buttons (About Me, Files) - keep them white when active */
+.dropbtn.active-link {
+    background-color: #fff !important;
+    color: #000 !important;
+    border-radius: 4px !important;
+}
+
+/* Ensure the caret icon is also black when active */
+.dropbtn.active-link .fa-caret-down {
+    color: #000 !important;
+}
+
+/* Ensure hover states work correctly */
+.dropbtn.active-link:hover {
+    background-color: #fff !important;
+    color: #000 !important;
+}

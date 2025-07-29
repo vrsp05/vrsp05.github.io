@@ -76,14 +76,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- SECTION TOGGLING LOGIC ---
     const showSection = (sectionId) => {
+        console.log('showSection called with:', sectionId);
+        
         sections.forEach(section => section.style.display = 'none');
         const targetSection = document.getElementById(sectionId);
         if (targetSection) {
             targetSection.style.display = 'block';
         }
+        
+        // Clear all active links first
         allNavLinks.forEach(nav => nav.classList.remove('active-link'));
-        const activeLink = document.querySelector(`a[href="#${sectionId.split('-')[0]}"]`);
-        if (activeLink) activeLink.classList.add('active-link');
+        
+        // Handle About Me sub-sections specially
+        if (sectionId === 'about' || sectionId.includes('-sub')) {
+            console.log('This is an About Me section, looking for About Me link...');
+            const aboutMeLink = document.querySelector('a[href="#about"]');
+            console.log('About Me link found:', aboutMeLink);
+            if (aboutMeLink) {
+                aboutMeLink.classList.add('active-link');
+                console.log('Added active-link to About Me');
+            }
+        }
+        // Handle Files sections (resume, cover-letter, transcript, cv)
+        else if (['resume', 'cover-letter', 'transcript', 'cv'].includes(sectionId)) {
+            console.log('This is a Files section, looking for Files dropdown...');
+            // CORRECTED: Find the button by its text content reliably
+            const filesDropdown = Array.from(document.querySelectorAll('.dropbtn')).find(btn => 
+                                     btn.textContent.trim().includes('Files'));
+            console.log('Files dropdown found:', filesDropdown);
+            if (filesDropdown) {
+                filesDropdown.classList.add('active-link');
+                console.log('Added active-link to Files dropdown');
+            }
+        }
+        // Handle other sections (projects, books)
+        else {
+            console.log('Regular section, looking for exact match...');
+            const activeLink = document.querySelector(`a[href="#${sectionId}"]`);
+            console.log('Found link for section:', activeLink);
+            if (activeLink) activeLink.classList.add('active-link');
+        }
     };
 
     // --- NAVIGATION LINK CLICK LOGIC ---
