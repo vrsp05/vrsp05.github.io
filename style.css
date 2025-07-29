@@ -1,44 +1,41 @@
-/* Reset some default browser styles */
+/* === START: GLOBAL STYLES & RESETS === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: black;
 }
 
 html {
-  height: 100%; /* Add this */
-  scroll-padding-top: 120px; /* Adjust based on header height */
+  height: 100%;
+  scroll-padding-top: 80px; /* Adjust based on header height */
+  scroll-behavior: smooth;
 }
 
-/* Body styles */
 body {
-  min-height: 100%; /* Add this */
-  display: flex; /* Add this */
-  flex-direction: column; /* Add this */
-
-  /* --- START: Background Image Styles --- */
-  background-image: url('images/Earth_Image.jpg'); /* <-- REPLACE WITH YOUR IMAGE PATH */
-  background-size: cover; /* Ensures the image covers the whole page */
-  background-position: center center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents the image from repeating */
-  background-attachment: fixed; /* This is the key! It keeps the image stationary during scroll */
-  /* --- END: Background Image Styles --- */
-
-  background-color: #1a1a2e; /* A dark fallback color that fits a space theme */
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-image: url('images/Earth_Image.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #1a1a2e;
   line-height: 1.6;
   color: #333; /* Default text color for content on light backgrounds */
 }
+/* === END: GLOBAL STYLES & RESETS === */
 
-/* General Header Styles */
+
+/* === START: HEADER & NAVIGATION === */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #000; /* Black background */
-    color: #fff; /* White text for the h1 */
+    background-color: #000;
+    color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     position: sticky;
     top: 0;
@@ -49,7 +46,6 @@ header h1 {
     color: #fff;
 }
 
-/* Navigation Links */
 .nav-links {
     list-style: none;
     display: flex;
@@ -63,30 +59,34 @@ header h1 {
 
 .nav-links a {
     text-decoration: none;
-    color: #fff; /* White link text */
+    color: #fff;
     font-weight: bold;
     padding: 5px 10px;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
 }
 
-/* Active link style */
-.nav-links a.active,
-.nav-links a:hover {
-    background-color: #fff; /* White background on hover/active */
-    color: #000; /* Black text on hover/active */
-}
-
-/* Make the "About Me" button permanently white with black text/icon */
-.nav-links .dropbtn {
+/* --- START: REPLACEMENT FOR HOVER/ACTIVE STYLES --- */
+/* Style for regular links on hover and the currently active section link */
+.nav-links a:hover,
+.nav-links a.active-link {
     background-color: #fff;
     color: #000;
 }
-.nav-links .dropbtn .fa-caret-down {
+
+/* This is the key: Keep the dropdown button white when hovering over the entire dropdown area */
+.dropdown:hover > .dropbtn {
+    background-color: #fff;
     color: #000;
 }
 
-/* === START: DROPDOWN MENU STYLES === */
+/* This ensures the caret icon is also black in all active/hover states */
+.nav-links a.active-link .fa-caret-down,
+.dropdown:hover > .dropbtn .fa-caret-down {
+    color: #000;
+}
+/* --- END: REPLACEMENT FOR HOVER/ACTIVE STYLES --- */
+
 .dropdown {
     position: relative;
     display: inline-block;
@@ -104,11 +104,11 @@ header h1 {
 }
 
 .dropdown-content a {
-    color: black !important; /* Black text for dropdown items */
+    color: black !important;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
-    text-align: left;
+    text-align: center; /* Add this line */
 }
 
 .dropdown-content a:hover {
@@ -118,260 +118,184 @@ header h1 {
 .dropdown:hover .dropdown-content {
     display: block;
 }
-/* === END: DROPDOWN MENU STYLES === */
 
-/* Hamburger Menu Icon */
 .hamburger {
     display: none;
-    font-size: 1.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-    color: #fff !important; /* White icon color */
 }
+/* === END: HEADER & NAVIGATION === */
 
-/* Navigation menu */
 
-/* Main content */
+/* === START: MAIN CONTENT & SECTIONS === */
 main {
-  flex-grow: 1; /* This is the key change */
+  flex-grow: 1;
   max-width: 900px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
-/* Section inside main */
 main section {
-  display: none; /* Hide all sections by default */
+  display: none;
   background-color: white;
   padding: 25px 30px;
   border-radius: 6px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin: 20px;
+  margin: 20px 0;
 }
 
-/* Section heading */
 main section h2 {
   margin-bottom: 15px;
   color: #004080;
+  text-align: center;
 }
 
-/* === START: CLEAN FOOTER STYLES === */
+hr {
+    border: 0;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 2rem 0;
+}
+/* === END: MAIN CONTENT & SECTIONS === */
 
-footer {
-    background-color: #000;
-    color: #fff;
-    padding: 2rem;
-    margin-top: 40px;
+
+/* === START: ABOUT SECTION === */
+section#about {
+    text-align: left;
+    overflow: auto;
+}
+
+section#about p {
+    margin-bottom: 1.2rem;
+}
+
+.profile-picture {
+    display: block;
+    width: 200px;
+    height: auto;
+    border-radius: 12px; /* Changed from 50% to create a rectangular shape */
+    margin: 0 auto 1.5rem auto;
+    border: 4px solid #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.sub-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+}
+
+/* === START: ACCORDION STYLES === */
+.accordion-container {
+    clear: both; /* Ensures it doesn't wrap around the floated profile picture */
+}
+
+.accordion-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.accordion-item:last-child {
+    border-bottom: none;
+}
+
+.accordion-button {
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+    position: relative;
+}
+
+.accordion-button:hover {
+    background-color: #f8f9fa;
+}
+
+.accordion-button::after {
+    content: '\002B'; /* Plus sign */
+    color: #007bff;
+    font-weight: bold;
+    position: absolute;
+    right: 18px;
+    font-size: 1.3rem;
+    transition: transform 0.3s ease;
+}
+
+.accordion-button.active::after {
+    content: "\2212"; /* Minus sign */
+    transform: rotate(180deg);
+}
+
+.accordion-panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+}
+
+.accordion-panel p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+/* === END: ACCORDION STYLES === */
+
+.sub-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+}
+
+/* === START: NEW ICON BUTTON STYLES === */
+.button-grid {
     display: flex;
-    justify-content: center; /* Center the entire footer content */
-    align-items: center; /* Vertically align everything */
-    gap: 3rem; /* Space between icons and text */
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
-.footer-social-links {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center; /* Center icons vertically */
-}
-
-.footer-social-links a {
-    color: #fff !important; /* Force white color for links */
-    font-size: 1.5rem;
-    transition: color 0.3s;
+.icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
     text-decoration: none;
-    display: flex; /* Make the link a flex container */
-    align-items: center; /* Center the icon within the link */
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #fff !important;
+    border: none;
+    min-width: 150px; /* Ensures buttons have a consistent width */
 }
 
-.footer-social-links a i {
-    color: #fff !important; /* Force white color for icons */
+.icon-btn i {
+    font-size: 1.2rem;
 }
 
-.footer-social-links a:hover {
-    color: #007bff !important; /* Blue on hover */
-}
+/* Color Classes */
+.btn-gray { background-color: #6c757d; }
+.btn-gray:hover { background-color: #5a6268; }
 
-.footer-social-links a:hover i {
-    color: #007bff !important; /* Blue icons on hover */
-}
+.btn-linkedin { background-color: #0A66C2; }
+.btn-linkedin:hover { background-color: #004182; }
 
-.footer-text {
-    text-align: center;
-    line-height: 1.4; /* Tighter line spacing */
-}
+.btn-github { background-color: #161B22; }
+.btn-github:hover { background-color: #010409; }
 
-.footer-text p {
-    margin: 0.2rem 0; /* Reduced margin for tighter spacing */
-    font-size: 0.9rem;
-    color: #ccc !important; /* Force light gray for footer text */
-}
-
-/* Media Query for Mobile Footer Layout */
-@media (max-width: 768px) {
-    footer {
-        flex-direction: column; /* Stack vertically on mobile */
-        justify-content: center;
-        gap: 1rem;
-    }
-
-    .footer-text {
-        order: 1; /* Text appears first */
-    }
-
-    .footer-social-links {
-        order: 2; /* Icons appear second */
-        justify-content: center;
-    }
-}
-
-/* === END: CLEAN FOOTER STYLES === */
+.btn-handshake { background-color: #5cb85c; }
+.btn-handshake:hover { background-color: #449d44; }
+/* === END: NEW ICON BUTTON STYLES === */
+/* === END: ABOUT SECTION === */
 
 
-/* Books */
-#books {
-  padding: 2rem;
-}
-
-.books-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .5rem;
-}
-
-.book {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 250px;
-  background-color: #f9f9f9;
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}
-
-.book:hover {
-  transform: translateY(-5px);
-}
-
-.book img {
-  width: 150px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-}
-
-.book-info {
-  text-align: center;
-  margin-top: 1rem;
-}
-
-.book-info h3 {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.book-info p {
-  margin: 0.5rem 0;
-  font-size: 0.9rem;
-  color: #444;
-}
-
-.book-info a {
-  color: #007bff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.book-info a:hover {
-  text-decoration: underline;
-}
-
-
-section#resume ul  {
-  padding-left: 30px;
-}
-
-.links-section {
-  background-color: #f0f4f8;
-  padding: 30px 20px;
-  text-align: center;
-  border-radius: 10px;
-  margin-top: 30px;
-}
-
-.links-section h2 {
-  font-size: 24px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.links-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.links-container a {
-  text-decoration: none;
-  color: #0056b3;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.links-container a i {
-  margin-right: 8px;
-  font-size: 20px;
-}
-
-.links-container a:hover {
-  color: #003d80;
-}
-
-#contact {
-  padding: 2rem;
-  background-color: #f7f7f7;
-  text-align: center;
-}
-
-.contact-methods {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 1rem;
-}
-
-.contact-methods a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  text-decoration: none;
-  color: #333;
-  transition: background-color 0.3s ease;
-  font-size: 1.1rem;
-}
-
-.contact-methods a:hover {
-  background-color: #d2d2d2;
-}
-
-#projects {
-  padding: 4rem 2rem;
-  background-color: #f8f9fa;
-  text-align: center;
-}
-
+/* === START: PROJECTS SECTION === */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 .project-card {
@@ -381,123 +305,96 @@ section#resume ul  {
   padding: 1.5rem;
   text-align: left;
   transition: transform 0.3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
   transform: translateY(-5px);
 }
 
-.project-card img {
-  width: 100%;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+.project-card p {
+    flex-grow: 1;
+    margin-bottom: 1.5rem;
 }
 
-.project-card h3 {
-  margin-top: 0;
-  color: #343a40;
+.project-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
-.project-card a {
-  display: inline-block;
-  margin-top: 0.5rem;
-  color: #007bff;
-  text-decoration: none;
-}
-
-.project-card a:hover {
-  text-decoration: underline;
-}
-
-
-
-@media (max-width: 600px) {
-  .books-container {
-    flex-direction: column;
+.project-btn {
+    display: inline-flex;
     align-items: center;
-  }
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: #fff !important;
 }
 
-/* === START: SIMPLIFIED MEDIA QUERY FOR HAMBURGER === */
-/* Media Query for Tablet and Mobile */
-@media (max-width: 768px) {
-    /* Hide the desktop navigation links */
-    .nav-links {
-        display: none;
-    }
+.github-btn { background-color: #6c757d; }
+.github-btn:hover { background-color: #5a6268; }
 
-    /* Show and style the hamburger icon to be clearly visible */
-    .hamburger {
-        display: block; /* Make it visible on mobile */
-        background-color: #fff; /* White background */
-        color: #000; /* Black icon color for contrast */
-        padding: 5px 8px; /* Add some space around the icon */
-        border-radius: 5px; /* Rounded corners */
-        font-size: 1.5rem;
-        border: none;
-        cursor: pointer;
-    }
+.youtube-btn { background-color: #FF0000; }
+.youtube-btn:hover { background-color: #c40202; }
 
-    /* Styles for the dropdown menu when it's active */
-    .nav-links.active {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 100%; /* Position it right below the header */
-        right: 0;
-        background-color: #000;
-        width: 100%;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-        padding: 0.5rem 0; /* Add some padding to the container */
-    }
+.doc-btn { background-color: #007bff; }
+.doc-btn:hover { background-color: #0056b3; }
+/* === END: PROJECTS SECTION === */
 
-    /* When the menu is active, show the list items again */
-    .nav-links.active li {
-        width: 100%;
-        margin: 0.5rem 0; /* Add vertical margin for spacing */
-        text-align: center;
-    }
 
-    .nav-links.active a {
-        padding: 0.5rem 1rem; /* Adjust padding for a better look */
-    }
-
-    /* Hide dropdown-specific elements on mobile menu */
-    .nav-links.active .dropdown-content {
-        display: block; /* Show sub-items */
-        position: static; /* Remove absolute positioning */
-        background-color: transparent;
-        box-shadow: none;
-        min-width: auto;
-    }
-
-    .nav-links.active .dropdown-content a {
-        color: #fff !important; /* White text for mobile sub-items */
-        padding: 0.5rem 2rem; /* Indent sub-items */
-        text-align: center;
-    }
-
-    .nav-links.active .dropbtn {
-        font-weight: bold; /* Make the main item bold */
-    }
-    
-    .nav-links.active .dropbtn .fa-caret-down {
-        display: none; /* Hide the caret on mobile */
-    }
-}
-/* === END: SIMPLIFIED MEDIA QUERY FOR HAMBURGER === */
-
-section#about {
-    text-align: left;
+/* === START: FILES & DOCUMENTS SECTION === */
+.section-intro {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    color: #666;
 }
 
-/* === START: DOCUMENT VIEWER STYLES === */
+.file-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.file-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 2rem;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.file-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background-color: #fff;
+}
+
+.file-card i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+.file-card h3 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
 .document-viewer {
     text-align: center;
-}
-
-.document-viewer h2 {
-    margin-bottom: 2rem;
 }
 
 .document-image {
@@ -528,100 +425,279 @@ section#about {
     font-size: 1rem;
 }
 
-.btn-view {
-    background-color: #007bff;
-    color: #fff !important;
+.btn-view { background-color: #007bff; color: #fff !important; }
+.btn-view:hover { background-color: #0056b3; }
+
+.btn-download { background-color: #28a745; color: #fff !important; }
+.btn-download:hover { background-color: #1e7e34; }
+/* === END: FILES & DOCUMENTS SECTION === */
+
+
+/* === START: BOOKS SECTION === */
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
 }
 
-.btn-view:hover {
-    background-color: #0056b3;
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
 }
 
-.btn-download {
-    background-color: #28a745;
-    color: #fff !important;
+.book:hover {
+  transform: translateY(-5px);
 }
 
-.btn-download:hover {
-    background-color: #1e7e34;
+.book img {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
-/* === START: FILE GRID STYLES === */
-#files h2 {
-    text-align: center;
+.book-info {
+  text-align: center;
+  margin-top: 1rem;
 }
 
-.section-intro {
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 1.1rem;
-    color: #666;
-}
+.book-info h3 { margin: 0; font-size: 1rem; }
+.book-info p { margin: 0.5rem 0; font-size: 0.9rem; color: #444; }
+.book-info a { color: #007bff; text-decoration: none; font-weight: bold; }
+.book-info a:hover { text-decoration: underline; }
+/* === END: BOOKS SECTION === */
 
-.file-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-}
 
-.file-card {
+/* === START: FOOTER === */
+footer {
+    background-color: #000;
+    color: #fff;
+    padding: 2rem;
+    margin-top: 40px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 12px;
-    padding: 2rem;
+    gap: 3rem;
+}
+
+.footer-social-links {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.footer-social-links a,
+.footer-social-links a i {
+    color: #fff !important;
+    font-size: 1.5rem;
+    transition: color 0.3s;
     text-decoration: none;
-    color: #333;
-    transition: all 0.3s ease;
 }
 
-.file-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    background-color: #fff;
+.footer-social-links a:hover,
+.footer-social-links a:hover i {
+    color: #007bff !important;
 }
 
-.file-card i {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #007bff;
-}
-
-.file-card h3 {
-    margin: 0;
-    font-size: 1.2rem;
-}
-/* === END: FILE GRID STYLES === */
-
-/* Change text-align from 'center' to 'left' */
-section#about {
-    text-align: left;
-}
-
-/* Add space between the biography paragraphs */
-section#about p {
-    margin-bottom: 1.2rem;
-}
-
-/* Styles for subsections within the About page */
-.sub-section {
-    margin-top: 2rem;
-    padding-top: 1rem;
-}
-
-/* Center all headings within the About section */
-section#about h2 {
+.footer-text {
     text-align: center;
-    margin-bottom: 1rem; /* Adds some space below the heading */
+    line-height: 1.4;
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background-color: #e0e0e0;
-    margin: 2rem 0;
+.footer-text p {
+    margin: 0.2rem 0;
+    font-size: 0.9rem;
+    color: #ccc !important;
+}
+/* === END: FOOTER === */
+
+
+/* === START: MOBILE RESPONSIVE STYLES === */
+@media (max-width: 768px) {
+    /* --- General Mobile Layout --- */
+    header { padding: 1rem; }
+    footer { flex-direction: column; gap: 1.5rem; }
+    .books-container { flex-direction: column; align-items: center; }
+
+    /* --- Hamburger & Mobile Nav --- */
+    .nav-links { display: none; }
+    .hamburger { display: block; font-size: 2rem; background: none; border: none; cursor: pointer; color: #fff !important; }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background-color: #000;
+        width: 100%;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        padding: 0.5rem 0;
+    }
+
+    .nav-links.active li { width: 100%; margin: 0; text-align: center; }
+    .nav-links.active a { padding: 0.75rem 1rem; display: block; -webkit-tap-highlight-color: transparent; }
+
+    /* --- START: NEW, CORRECTED FIX FOR MOBILE FLASHING --- */
+    /*
+     * This specifically targets the "Projects" and "Books" links.
+     * It tells them to have NO background color when tapped (:active).
+    */
+    .nav-links.active > li > a:not(.dropbtn):active {
+        background-color: transparent;
+    }
+
+    /*
+     * This specifically targets the "About Me" and "Files" buttons.
+     * It forces them to KEEP their white background when tapped.
+    */
+    .nav-links.active > li > a.dropbtn:active {
+        background-color: #fff;
+    }
+    /* --- END: NEW, CORRECTED FIX FOR MOBILE FLASHING --- */
+
+    /* --- Mobile Accordion Menu --- */
+    /*
+     * This rule is more specific and comes after, so it correctly
+     * ensures the dropdown buttons ("About Me", "Files")
+     * KEEP their white background.
+    */
+    .nav-links.active .dropbtn {
+        display: inline-block;
+        background-color: #fff;
+        color: #000;
+        padding: 5px 15px;
+        border-radius: 6px;
+    }
+    
+    .nav-links.active .dropbtn .fa-caret-down {
+        display: inline-block;
+        color: #000;
+        margin-left: 5px;
+    }
+
+    .nav-links.active .dropdown-content {
+        display: none;
+        position: static;
+        background-color: transparent;
+        box-shadow: none;
+        width: 100%;
+    }
+
+    .nav-links.active .dropdown-content.open { display: block; }
+
+    /* This rule makes the sub-menu links visible again */
+    .nav-links.active .dropdown-content a {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding-left: 0; /* Change from 2rem to 0 */
+        text-align: center; /* Add this line */
+        font-size: 0.9rem;
+        color: #fff !important; /* Fixes invisible text */
+    }
+
+    /* --- Mobile Profile Picture --- */
+    .profile-picture {
+        float: none;
+        display: block;
+        margin: 0 auto 2rem auto;
+    }
+
+    /* This rule restores the 2x2 grid for your contact buttons */
+    .icon-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+/* === END: MOBILE RESPONSIVE STYLES === */
+
+/* === START: NEW LANDING PAGE STYLES === */
+.landing-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 2rem;
 }
 
+.landing-container {
+    max-width: 600px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 2.5rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.landing-container h2 {
+    margin-bottom: 0.5rem;
+    color: #004080;
+}
+
+.landing-container p {
+    margin-bottom: 2rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.landing-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.landing-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    background-color: #6c757d; /* Changed to Gray */
+    color: #fff !important;
+}
+
+.landing-btn:hover {
+    background-color: #5a6268; /* Darker Gray on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.landing-btn i {
+    font-size: 1.5rem;
+}
+
+.landing-footer-nav {
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e0e0e0;
+}
+
+.landing-footer-nav a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.landing-footer-nav a:hover {
+    text-decoration: underline;
+}
+
+.landing-footer-nav span {
+    margin: 0 0.5rem;
+    color: #ccc;
+}
+/* === END: NEW LANDING PAGE STYLES === */
