@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victor Santana's Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<!-- ADD THE CLASS "landing-page" HERE -->
+<body class="landing-page">
+    <header>
+        <h1>Victor Santana's Portfolio</h1>
+        <nav>
+            <ul class="nav-links">
+                <!-- ADD THIS NEW "HOME" BUTTON AND MAKE IT ACTIVE -->
+                <li><a href="index.html" class="nav-link active-link">Home</a></li>
+
+                <!-- This is the "About Me" dropdown -->
+                <li class="dropdown">
+                    <!-- REMOVE THE HREF ATTRIBUTE FROM THIS BUTTON -->
+                    <a class="nav-link dropbtn">About Me <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="portfolio.html#about-sub">Biography</a>
+                        <a href="portfolio.html#contact-sub">Contact</a>
+                        <a href="portfolio.html#links-sub">Find Me Online</a>
+                    </div>
+                </li>
+
+                <!-- The "Files" button -->
+                <li class="dropdown">
+                    <!-- REMOVE THE HREF ATTRIBUTE FROM THIS BUTTON TOO -->
+                    <a class="nav-link dropbtn">Files <i class="fas fa-caret-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="portfolio.html#resume">Resume</a>
+                        <a href="portfolio.html#cover-letter">Cover Letter</a>
+                        <a href="portfolio.html#transcript">Unofficial Transcript</a>
+                        <a href="portfolio.html#cv">Curriculum Vitae</a>
+                    </div>
+                </li>
+
+                <!-- Your other links -->
+                <li><a href="portfolio.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="portfolio.html#books" class="nav-link">Books</a></li>
+            </ul>
+        </nav>
+        <button class="hamburger" aria-label="Toggle menu">
+        <i class="fas fa-bars"></i>
+        </button>
+    </header>
+    <!-- END OF REPLACEMENT -->
+
+    <main class="landing-main">
+        <div class="landing-container">
+            <h2>Welcome</h2>
+            <p>Select an option below to learn more about me.</p>
+            <div class="landing-buttons">
+                <a href="portfolio.html#about-sub" class="landing-btn">
+                    <i class="fas fa-user-tie"></i>
+                    <span>Biography</span>
+                </a>
+                <a href="portfolio.html#contact-sub" class="landing-btn">
+                    <i class="fas fa-address-book"></i>
+                    <span>Contact</span>
+                </a>
+                <a href="portfolio.html#links-sub" class="landing-btn">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Find Me Online</span>
+                </a>
+            </div>
+            <div class="landing-footer-nav">
+                <a href="portfolio.html#projects">View All Projects</a>
+                <span>&bull;</span>
+                <a href="portfolio.html#files">View All Files</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-text">
+            <p>&copy; 2025 Victor Santana Pimentel. All rights reserved.</p>
+            <p>Website built with ❤️ using GitHub Pages</p>
+        </div>
+        <div class="footer-social-links">
+            <a href="mailto:victorrafaelsantana@hotmail.es" target="_blank" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/victorrafaelsantana/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/vrsp05" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+    </footer>
+
+    <!-- ADD THIS LINE IF IT'S MISSING -->
+    <script src="script.js"></script>
+</body>
+</html>
