@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Set initial background
     rotateBackground();
 
-    setInterval(rotateBackground, 120000);
+    setInterval(rotateBackground, 30000);
 
     // --- HAMBURGER MENU LOGIC ---
     if (hamburger && navLinksContainer) {
