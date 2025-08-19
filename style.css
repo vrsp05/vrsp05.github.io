@@ -258,7 +258,7 @@ section#about p {
 .accordion-panel {
     padding: 0 18px;
     background-color: white;
-    max-height: 500px; /* Changed from 0 to a reasonable default height */
+    max-height: 1000px; /* Increased from 500px to accommodate longer content */
     overflow: hidden;
     transition: max-height 0.3s ease-out;
 }
@@ -881,3 +881,19 @@ footer {
     }
 }
 /* === END: RESPONSIVE DESIGN (MEDIA QUERIES) === */
+
+/* === START: INLINE LINK STYLING === */
+.inline-link {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.inline-link:hover {
+    color: #0056b3;
+    border-bottom: 1px solid #0056b3;
+    text-decoration: none;
+}
+/* === END: INLINE LINK STYLING === */

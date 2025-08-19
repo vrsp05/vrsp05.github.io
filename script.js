@@ -152,6 +152,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // --- HANDLE INTERNAL LINKS (like the projects link in bio) ---
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href^="#"]');
+        if (link) {
+            // Check if this link is NOT part of the main navigation
+            const isNavLink = link.closest('.nav-links') !== null;
+            
+            if (!isNavLink) {
+                e.preventDefault();
+                const targetId = link.getAttribute('href').substring(1);
+                console.log('Internal link clicked, target:', targetId);
+                showSection(targetId);
+                window.scrollTo(0, 0);
+            }
+        }
+    });
+
     // --- FILE CARD CLICK LOGIC ---
     fileCards.forEach(card => {
         card.addEventListener('click', (e) => {
