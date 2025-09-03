@@ -258,7 +258,7 @@ section#about p {
 .accordion-panel {
     padding: 0 18px;
     background-color: white;
-    max-height: 2000px; /* Increased from 500px to accommodate longer content */
+    max-height: 4000px; /* Increased from 500px to accommodate longer content */
     overflow: hidden;
     transition: max-height 0.3s ease-out;
 }
